@@ -1,0 +1,18 @@
+<% if @favorite %>
+  <%= form_with url: matches_path, method: :post do |form|%>
+    <%= form.label 'Хотите увидеть только свои любимые команды?' %>
+    <div class="checkbox_label">
+      <div><%= form.check_box :fav, checked: true, style: 'transform: scale(2)'%></div>
+      <div><%= form.button 'GO!', class: 'glow-on-hover' %></div>
+    </div>
+  <% end %>
+<% else %>
+  <%= form_with url: matches_path, method: :post do |form|%>
+    <%= form.label 'Хотите увидеть только свои любимые команды?' %>
+    <div class="checkbox_label">
+      <div><%= form.check_box :fav, style: 'transform: scale(2)'%></div>
+      <div><%= form.button 'GO!', class: 'glow-on-hover' %></div>
+    </div>
+  <% end %>
+<% end %>
+

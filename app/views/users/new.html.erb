@@ -1,0 +1,28 @@
+<h1 style="padding: 30px"><%= t('.label') %></h1>
+
+<div id = "errors"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-3" style="text-align: center">
+      <%= form_with model: @user, url: users_path do |form|%>
+        <%= form.label(t('.input_email'))%>
+        <br>
+        <%= form.email_field :email, class: "form-control form-control-dark text-bg-dark" %>
+        <br>
+        <%= form.label(t('.input_login'))%>
+        <br>
+        <%= form.text_field :login, class: "form-control form-control-dark text-bg-dark"%>
+        <br>
+        <%= form.label(t('.input_password'))%>
+        <br>
+        <%= form.password_field :password, class: "form-control form-control-dark text-bg-dark"%>
+        <br>
+        <%= form.label(t('.confirm_password'))%>
+        <br>
+        <%= form.password_field :password_confirmation, class: "form-control form-control-dark text-bg-dark"%>
+        <br>
+          <%= form.submit t('.sign_up'), class: "btn btn-outline-dark me-2", id: "my_reg_button"%>
+      <% end %>
+      </div>
+</div>
+</div>

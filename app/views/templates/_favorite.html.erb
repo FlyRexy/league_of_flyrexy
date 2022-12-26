@@ -1,0 +1,5 @@
+<% if Favorite.where(user: current_user).map{ |favor| favor.team.name }.include? @team.name %>
+  <%= link_to '❤️', teams_path(team: @team), data: { "turbo-method": :patch }, class: 'end', id: dom_id(@team) %>
+<% else %>
+  <%= link_to "🤍", teams_path(team: @team), data: { "turbo-method": :patch }, class: 'end', id: dom_id(@team) %>
+<% end %>

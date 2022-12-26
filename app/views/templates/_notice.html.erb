@@ -1,0 +1,6 @@
+
+<% if Favorite.where(user: current_user).map{ |favor| favor.team.name }.include? @team.name %>
+  <div class="notice"><%= "Команда #{@team.name} была добавлена в избранное" %></div>
+<% else %>
+  <div class="notice"><%= "Команда #{@team.name} была удалена из избранного" %></div>
+<% end %>

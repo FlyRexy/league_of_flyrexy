@@ -1,0 +1,43 @@
+<div id="slider">
+  <%= render 'templates/slider' %>
+</div>
+<div class="teams_content">
+
+  <div class="slider_content">
+    <div id="LCL" class="tabcontent" style="display: block">
+      <%= render 'templates/lcl_matches' %>
+    </div>
+
+    <div id="LEC" class="tabcontent">
+      <%= render 'templates/lec_matches' %>
+    </div>
+  </div>
+
+  <div class="tab">
+    <button class="tablinks" onclick="openTour(event, 'LCL')">
+      <img src="https://am-a.akamaihd.net/image?resize=50:&f=http%3A%2F%2Fstatic.lolesports.com%2Fleagues%2F1593016885758_LCL-01-FullonDark.png">
+      <span class="tour_label">
+        <span>LCL</span>
+        <div style="color: #374b48"><%= t 'results.index.cis' %></div>
+      </span>
+    </button>
+    <button class="tablinks" onclick="openTour(event, 'LEC')">
+      <img src="https://am-a.akamaihd.net/image?resize=50:&f=http%3A%2F%2Fstatic.lolesports.com%2Fleagues%2F1592516184297_LEC-01-FullonDark.png">
+      <div class="tour_label">
+        <span>LEC</span>
+        <div style="color: #374b48"><%= t 'results.index.europe' %></div>
+      </div>
+    </button>
+    <% if user_signed_in? %>
+      <div class="checkbox_fav" id="check_box_fav">
+        <%= form_with url: matches_path, method: :post do |form|%>
+          <%= form.label t('.favorite') %>
+          <div class="checkbox_label">
+            <div><%= form.check_box :fav, style: 'transform: scale(2)'%></div>
+            <div><%= form.button 'GO!', class: 'glow-on-hover', id: 'go_button' %></div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

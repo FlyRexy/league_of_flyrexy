@@ -1,0 +1,57 @@
+<header class="p-3 text-bg-dark">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <h1>FlyRexy</h1>
+      </ul>
+      <div class="text-end head_buttons">
+        <% if current_user&.email == 'eferovnik@mail.ru' %>
+          <%= link_to 'Обновить LCL', matches_update_ru_path, class: 'tour' %>
+          <%= link_to 'Обновить LEC', matches_update_eu_path, class: 'tour' %>
+          <%= link_to 'Новые команды', new_teams_path, class: 'tour' %>
+        <% end %>
+        <%= link_to t('menu.bracket'), results_index_path, class: 'tour' %>
+        <%= link_to t('menu.teams'), teams_index_path, class: 'tour' %>
+        <%= link_to t('menu.matches'), root_path, class: 'tour' %>
+        <% if user_signed_in? %>
+<!--          <div class="dropdown">-->
+<!--            <button class="no_line_chill btn btn-secondary dropdown-toggle">ASDLKDSALKLK</button>-->
+<!--          <p1 style="padding-left: 20px">-->
+<!--            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">-->
+<!--              <li><button type="button" class="btn btn-danger"><%#= link_to 'Log out', session_path, class: 'no_line dropdown-item', data: {turbo_method: :delete}%></button></li>-->
+<!--              <li><button type="button" class="btn btn-outline-light me-2"><%#= link_to 'Edit info', edit_user_path(current_user), class: 'no_line_chill dropdown-item' %></button></li>-->
+<!--            </ul>-->
+<!--          </p1>-->
+<!--          </div>-->
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <span class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <%= current_user.login %>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                      <li><%= link_to t('menu.edit'), edit_user_path(current_user), class: 'no_line_chill dropdown-item', id: 'edit_button_header' %></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><%= link_to t('menu.log_out'), session_path, class: 'no_line dropdown-item', data: {turbo_method: :delete}, id: 'log_out_button' %></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </span>
+          </nav>
+        <% else %>
+          <button type="button" class="btn btn-outline-light me-2 not_ugly"><%= link_to t('menu.sign_in'), new_session_path, class: 'no_line_chill' %></button>
+          <button type="button" class="btn btn-warning not_ugly"><%= link_to t('menu.sign_up'), new_user_path, class: 'no_line'  %></button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</header>

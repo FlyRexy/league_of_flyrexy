@@ -1,0 +1,24 @@
+<% teams = Team.where(region: 'LEC').order(:id) %>
+<div id="notice_lec"></div>
+<div class="container" style="padding-top: 50px">
+  <div class="col-2"></div>
+  <% teams.each do |team| %>
+    <div class="row">
+      <div class="col-8" style="padding: 20px">
+        <div class="team">
+          <%= image_tag(team.logo.variant(:match)) if team.logo.attached?%>
+          <%= link_to team.name, teams_path(team: team), data: {turbo_frame: "modal"}, class: "team_link"%>
+        </div>
+      </div>
+      <div class="col-2">
+        <% if user_signed_in? %>
+          <% if @fav_names.include? team.name %>
+            <%= link_to '❤️', teams_path(team: team), data: { "turbo-method": :patch }, class: 'end', id: dom_id(team) %>
+          <% else %>
+            <%= link_to "🤍", teams_path(team: team), data: { "turbo-method": :patch }, class: 'end', id: dom_id(team) %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

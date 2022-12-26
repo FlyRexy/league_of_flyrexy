@@ -1,0 +1,41 @@
+
+<h1 STYLE="padding: 30px; padding-left: 50px">Добавьте команду</h1>
+
+<div id = "errors"></div>
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-3" style="padding: 10px">
+    <%= form_with url: teams_path do |form|%>
+      <%= form.label("Введите название команды")%>
+      <br>
+      <%= form.text_field :name, class: "form-control form-control-dark text-bg-dark" %>
+      <br>
+      <%= form.label("Введите каждого игрока основного состава через пробел")%>
+      <br>
+      <%= form.text_field :players, class: "form-control form-control-dark text-bg-dark"%>
+      <br>
+      <%= form.label("Введите ник тренера")%>
+      <br>
+      <%= form.text_field :coach, class: "form-control form-control-dark text-bg-dark"%>
+      <br>
+      <%= form.label("Введите запасных игроков, если такие имеются")%>
+      <br>
+      <%= form.text_field :subs, class: "form-control form-control-dark text-bg-dark"%>
+      <br>
+      <%= form.label("Введите сокращенное название команды")%>
+      <br>
+      <%= form.text_field :shortname, class: "form-control form-control-dark text-bg-dark"%>
+      <br>
+      <%= form.label("Введите регион, в котором выступает команда")%>
+      <br>
+      <%= form.text_field :region, class: "form-control form-control-dark text-bg-dark"%>
+      <br>
+      <%= form.label("Загрузите логотип команды")%>
+      <br>
+      <%= form.file_field :logo, class: "form-control form-control-dark text-bg-dark"%>
+      <br>
+      <%= form.submit "Sign Up", class: "btn btn-outline-dark me-2", id: "my_reg_button"%>
+    <% end %>
+  </div>
+</div>
+

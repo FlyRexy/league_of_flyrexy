@@ -1,0 +1,19 @@
+<h1 style="padding: 20px"><%= t '.restore_label' %></h1>
+
+
+<div id = "errors"></div>
+<div class="col-3" style="padding: 5px">
+  <%= form_with model: @user, url: password_reset_path do |form|%>
+    <%= form.hidden_field :password_reset_token, value: @user.password_reset_token %>
+    <%= form.hidden_field :email, value: @user.email %>
+    <%= form.label :password%>
+    <br>
+    <%= form.password_field :password, class: "form-control form-control-dark text-bg-dark"%>
+    <br>
+    <%= form.label :password_confirmation%>
+    <br>
+    <%= form.password_field :password_confirmation, class: "form-control form-control-dark text-bg-dark"%>
+    <br>
+    <%= form.submit t('users.edit.change'), class: "btn btn-outline-dark me-2"%>
+  <% end %>
+</div>

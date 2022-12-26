@@ -1,0 +1,82 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t "hello"
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t("hello") %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   "true": "foo"
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+en:
+  hello: "Hello world"
+  menu:
+    bracket: 'Bracket'
+    teams: 'Teams'
+    matches: 'Matches'
+    sign_in: 'Sign in'
+    sign_up: 'Sign Up'
+    edit: 'Edit'
+    log_out: 'Log out'
+  results:
+    index:
+      grp_stage: 'Group stage'
+      play_off: 'Play off'
+      cis: 'CIS'
+      europe: 'EUROPE'
+      win_bracket: 'Winner bracket'
+      los_bracket: 'Loser bracket'
+  matches:
+    index:
+      favorite: 'Do you want to see only your favorite teams?'
+  teams:
+    show:
+      players: 'Players'
+      coach: 'Coach'
+  users:
+    edit:
+      label: 'Edit profile data'
+      cng_email: 'Change e-mail'
+      cng_login: 'Change login'
+      change: 'Change'
+    new:
+      label: 'Registration'
+      input_email: 'Input e-mail'
+      input_login: 'Input login'
+      input_password: 'Input password'
+      confirm_password: 'Confirm password'
+      sign_up: 'Sign up'
+  sessions:
+    new:
+      label: 'Logging in'
+      forgot: 'Forgot your password?'
+      sign_in: 'Sign in'
+      login: 'Login'
+      password: 'Password'
+  password_resets:
+    new:
+      reset: 'Reset'
+      reset_password: 'Reset password'
+    edit:
+      restore_label: 'Restore password'

@@ -1,0 +1,5 @@
+<% @user.errors.each do |error| %>
+  <ul class="list-group">
+    <li class="list-group-item"><%= error.full_message %></li>
+  </ul>
+<% end %>

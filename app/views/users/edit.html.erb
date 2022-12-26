@@ -1,0 +1,31 @@
+<h1 style="padding: 30px"><%= t '.label' %></h1>
+<div id = "errors"></div>
+<div class="container">
+  <div class="col-3" style="text-align: center">
+    <%= form_with model: current_user, url: "/users/#{current_user.id}" do |form|%>
+      <%= form.label(t('.cng_email'))%>
+      <br>
+      <%= form.email_field :email,placeholder: current_user.email, class: "form-control form-control-dark text-bg-dark" %>
+      <br>
+      <%= form.label(t('.cng_login'))%>
+      <br>
+      <%= form.text_field :login, placeholder: current_user.login, class: "form-control form-control-dark text-bg-dark"%>
+      <br>
+      <%= form.label :old_password%>
+      <br>
+      <%= form.password_field :old_password, class: "form-control form-control-dark text-bg-dark"%>
+      <br>
+      <%= form.label :password%>
+      <br>
+      <%= form.password_field :password, class: "form-control form-control-dark text-bg-dark"%>
+      <br>
+      <%= form.label :password_confirmation%>
+      <br>
+      <%= form.password_field :password_confirmation, class: "form-control form-control-dark text-bg-dark"%>
+      <br>
+      <%= form.submit t('users.edit.change'), class: "btn btn-outline-dark me-2", id: 'edit_user_button' %>
+    <% end %>
+  </div>
+</div>
+
+

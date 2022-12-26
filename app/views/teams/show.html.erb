@@ -1,0 +1,26 @@
+
+  <%= turbo_frame_tag :modal do %>
+    <div id="popup" class="popup">
+      <div class="popup_body">
+        <div class="popup_content">
+          <div class="popup_name">
+            <%= image_tag(@team.logo) %>
+            <%= @team.name %>
+            <span class="team_show_logo"><%= image_tag("#{@team.region.downcase}_black.png", style: "width: 100px; height: 100px") %></span>
+          </div>
+          <span class="popup_players_label"><%= t '.players' %></span>
+          <span class="popup_coach_label"><%= t '.coach' %></span>
+          <div class="team_show_flex">
+            <div class="popup_players">
+              <% @team.players.each do |player| %>
+                <div class="player"><%= player %></div>
+              <% end %>
+            </div>
+              <div class="player"><%= @team.coach %></div>
+          </div>
+
+          <%= button_to '❌', teams_close_path, class: "glow-on-hover", style: "margin-top: 30px" %>
+        </div>
+      </div>
+    </div>
+  <% end %>

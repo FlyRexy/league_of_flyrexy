@@ -1,0 +1,53 @@
+<div class="match_content">
+  <h4 style="color: white; padding: 5px"><%= t 'results.index.win_bracket' %></h4>
+  <div class="result_bracket">
+    <div class="play_off_match">
+      <%= image_tag(Team.find_by_shortname('OBG')&.logo&.variant(:match)) %>
+      <span style="color:white">OBG</span>
+      <span style="color:white">1 - 3</span>
+      <span style="color:white">CC</span>
+      <%= image_tag(Team.find_by_shortname('CC')&.logo&.variant(:match)) %>
+    </div>
+    <div class="play_off_match">
+      <%= image_tag(Team.find_by_shortname('UOL')&.logo&.variant(:match)) %>
+      <span style="color:white">UOL</span>
+      <span style="color:white">1 - 3</span>
+      <span style="color:white">CC</span>
+      <%= image_tag(Team.find_by_shortname('CC')&.logo&.variant(:match)) %>
+    </div>
+    <div style="padding-left: 300px" class="play_off_match">
+      <%= image_tag(Team.find_by_shortname('CC')&.logo&.variant(:match)) %>
+      <span style="color:white">CC</span>
+      <span style="color:white">2 - 3</span>
+      <span style="color:white">UOL</span>
+      <%= image_tag(Team.find_by_shortname('UOL')&.logo&.variant(:match)) %>
+    </div>
+  </div>
+  <h4 style="color: white; padding: 5px"><%= t 'results.index.los_bracket' %></h4>
+  <div class="result_bracket">
+    <div class="play_off_match">
+      <%= image_tag(Team.find_by_shortname('BSG')&.logo&.variant(:match)) %>
+      <span style="color:white">BSG</span>
+      <span style="color:white">1 - 3</span>
+      <span style="color:white">VEG</span>
+      <%= image_tag(Team.find_by_shortname('VEG')&.logo&.variant(:match)) %>
+    </div>
+    <div>
+      <div class="play_off_match">
+        <%= image_tag(Team.find_by_shortname('OBG')&.logo&.variant(:match)) %>
+        <span style="color:white">OBG</span>
+        <span style="color:white">3 - 0</span>
+        <span style="color:white">VEG</span>
+        <%= image_tag(Team.find_by_shortname('VEG')&.logo&.variant(:match)) %>
+      </div>
+    </div>
+    <div class="play_off_match">
+      <%= image_tag(Team.find_by_shortname('UOL')&.logo&.variant(:match)) %>
+      <span style="color:white">UOL</span>
+      <span style="color:white">3 - 2</span>
+      <span style="color:white">OBG</span>
+      <%= image_tag(Team.find_by_shortname('OBG')&.logo&.variant(:match)) %>
+    </div>
+  </div>
+
+</div>

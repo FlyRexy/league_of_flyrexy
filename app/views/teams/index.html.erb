@@ -1,0 +1,30 @@
+
+<div class="teams_content">
+
+  <div id="LCL" class="tabcontent" style="display: block">
+    <%= render 'templates/lcl' %>
+  </div>
+
+  <div id="LEC" class="tabcontent">
+    <%= render 'templates/lec' %>
+  </div>
+
+  <div class="tab">
+    <button class="tablinks" onclick="openTour(event, 'LCL')" id="lcl_button">
+      <img src="https://am-a.akamaihd.net/image?resize=50:&f=http%3A%2F%2Fstatic.lolesports.com%2Fleagues%2F1593016885758_LCL-01-FullonDark.png">
+      <span class="tour_label">
+        <span>LCL</span>
+        <div style="color: #374b48"><%= t 'results.index.cis' %></div>
+      </span>
+    </button>
+    <button class="tablinks" onclick="openTour(event, 'LEC')" id="lec_button">
+      <img src="https://am-a.akamaihd.net/image?resize=50:&f=http%3A%2F%2Fstatic.lolesports.com%2Fleagues%2F1592516184297_LEC-01-FullonDark.png">
+      <div class="tour_label">
+        <span>LEC</span>
+        <div style="color: #374b48"><%= t 'results.index.europe' %></div>
+      </div>
+    </button>
+  </div>
+</div>
+
+

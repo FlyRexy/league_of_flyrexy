@@ -1,0 +1,6 @@
+<% if @team.region == 'LEC' %>
+  <%= turbo_stream.update 'notice_lec', partial: 'templates/notice' %>
+<% else %>
+  <%= turbo_stream.update 'notice_lcl', partial: 'templates/notice' %>
+<% end %>
+<%= turbo_stream.replace dom_id(@team), partial: 'templates/favorite' %>

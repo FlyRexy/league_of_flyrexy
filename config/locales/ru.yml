@@ -1,0 +1,64 @@
+ru:
+  menu:
+    bracket: 'Сетка'
+    teams: 'Команды'
+    matches: 'Матчи'
+    sign_in: 'Войти'
+    sign_up: 'Зарегистрироваться'
+    edit: 'Редактировать'
+    log_out: 'Выйти'
+  activerecord:
+    attributes:
+      user:
+        email: 'Почтовый адрес'
+        login: 'Логин'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+        old_password: 'Старый пароль'
+      team:
+        name: 'Название'
+        players: 'Игроки'
+        coach: 'Тренер'
+        shortname: 'Сокращенное название'
+        region: 'Регион'
+  results:
+    index:
+      grp_stage: 'Групповая стадия'
+      play_off: 'Игра на вылет'
+      cis: 'СНГ'
+      europe: 'ЕВРОПА'
+      win_bracket: 'Верхняя сетка'
+      los_bracket: 'Нижняя сетка'
+  teams:
+    show:
+      players: 'Игроки'
+      coach: 'Тренер'
+  matches:
+    index:
+      favorite: 'Хотите увидеть только свои любимые команды?'
+  users:
+    edit:
+      label: 'Редактировать данные профиля'
+      cng_email: 'Поменять e-mail'
+      cng_login: 'Поменять логин'
+      change: 'Изменить'
+    new:
+      label: 'Регистрация'
+      input_email: 'Введите e-mail'
+      input_login: 'Введите логин'
+      input_password: 'Введите пароль'
+      confirm_password: 'Подтвердите пароль'
+      sign_up: 'Зарегистрироваться'
+  sessions:
+    new:
+      label: 'Вход'
+      forgot: 'Забыли пароль?'
+      sign_in: 'Войти'
+      login: 'Логин'
+      password: 'Пароль'
+  password_resets:
+    new:
+      reset: 'Сбросить'
+      reset_password: 'Сбросить пароль'
+    edit:
+      restore_label: 'Восстановить пароль'

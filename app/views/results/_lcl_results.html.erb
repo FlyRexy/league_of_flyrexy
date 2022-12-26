@@ -1,0 +1,31 @@
+
+<div class="tab">
+  <button class="stagelinks" onclick="openStage(event, 'lcl_grp_stage')">
+  <span class="tour_label">
+        <span><%= t 'results.index.grp_stage' %></span>
+      </span>
+  </button>
+  <button class="stagelinks" onclick="openStage(event, 'lсl_off_stage')">
+  <span class="tour_label">
+        <span><%= t 'results.index.play_off' %></span>
+      </span>
+  </button>
+</div>
+
+<div class="stagecontent" id="lcl_grp_stage" style="display: block">
+  <div class="match_content">
+    <% i = 0 %>
+    <% @result_ru.each do |result| %>
+      <div class="match">
+        <span style="padding-top: 20px"><%= i += 1 %></span>
+        <span class="logo1"><%= image_tag(result.team.logo.variant(:match)) if result.team.logo.attached? %></span>
+        <span class="result-team-name"><%= link_to result.name, teams_path(team: result.team), data: {turbo_frame: "modal"}, class: "team_link" %></span>
+        <span style="padding-top: 20px"><%= result.score %></span>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="stagecontent" id="lсl_off_stage">
+  <%= render 'lcl_bracket' %>
+</div>

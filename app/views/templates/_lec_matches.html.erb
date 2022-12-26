@@ -1,0 +1,31 @@
+<!--<div id="slider">-->
+  <%#= render 'tournament/templates/slider' %>
+<!--</div>-->
+
+<% unique_day = 0 %>
+<div class="match_content">
+  <%# if @matches_eu.empty? %>
+<!--    <div class="notice">К сожалению, у тебя пока что нет любимых команд из этого региона😢</div>-->
+  <%# end %>
+  <% @matches_eu.each do |match| %>
+    <% if match.time.strftime('%m%d') != unique_day %>
+      <div class="day"><%= l match.time, format: '%d %B' %></div>
+      <% unique_day = match.time.strftime('%m%d') %>
+    <% end %>
+    <div class="match">
+      <span class="hours"><%= match.time.hour %></span>
+      <span class="minutes"><%= match.time.strftime('%M') %></span>
+      <span class="team1"><%= match.team1 %></span>
+      <span class="logo1"><%= image_tag(@teams.find_by(shortname: match.team1).logo.variant(:match)) %></span>
+      <% if match.result == match.team1 %>
+        <span class="match_result">1 - 0</span>
+      <% elsif match.result == match.team2[2..-1]%>
+        <span class="match_result">0 - 1</span>
+      <% else %>
+        <span class="match_result"> vs </span>
+      <% end %>
+      <span class="logo2"><%= image_tag(@teams.find_by(shortname: match.team2[2..-1]).logo.variant(:match)) %></span>
+      <span class="team2"><%= match.team2 %></span>
+    </div>
+  <% end %>
+</div>

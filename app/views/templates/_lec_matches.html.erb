@@ -1,12 +1,8 @@
-<!--<div id="slider">-->
-  <%#= render 'tournament/templates/slider' %>
-<!--</div>-->
-
 <% unique_day = 0 %>
 <div class="match_content">
-  <%# if @matches_eu.empty? %>
-<!--    <div class="notice">К сожалению, у тебя пока что нет любимых команд из этого региона😢</div>-->
-  <%# end %>
+  <% if @matches_eu.empty? %>
+    <div class="notice">К сожалению, у тебя пока что нет любимых команд из этого региона😢</div>
+  <% end %>
   <% @matches_eu.each do |match| %>
     <% if match.time.strftime('%m%d') != unique_day %>
       <div class="day"><%= l match.time, format: '%d %B' %></div>

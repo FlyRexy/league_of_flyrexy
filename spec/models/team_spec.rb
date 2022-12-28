@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Team, type: :model do
+  # Проверка валидации модели команды
   context 'validations' do
     let!(:team_data) do
       { name: 'Fly Esports', players: %w[Nikita Azamat Igor Yan Ruslan], coach: 'Valera', shortname: 'LOSERS', region: 'EMEA'}

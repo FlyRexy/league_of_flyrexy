@@ -23,14 +23,17 @@ RSpec.describe User, type: :model do
     let!(:user_logn_repeat) { User.new(user_login_repeat) }
     let!(:user_passwords_not_matching) {User.new(bad_passwords)}
 
+    # Попытка создать пользователя с почтой, которая уже существует
     it "don't allow to repeat e-mail" do
       expect(user_mail_repeat.valid?).to eq(false)
     end
 
+    # Попытка создать пользователя с логином, который уже существует
     it "don't allow to repeat login" do
       expect(user_logn_repeat.valid?).to eq(false)
     end
 
+    # Попытка создать пользователя с не совпадающими паролями
     context 'when passwords are not matching' do
       it 'should be invalid' do
         expect(user_passwords_not_matching.valid?).to eq(false)
@@ -43,12 +46,14 @@ RSpec.describe User, type: :model do
     it { should validate_uniqueness_of(:login).with_message('уже существует') }
     it { should validate_uniqueness_of(:email).with_message('уже существует') }
 
+    # Проверка валидации почты
     context 'when email is valid' do
       it {
         should allow_value("#{Faker::Lorem.word}@#{[*'a'..'z'].shuffle[2..5].join}.#{[*'a'..'z'].shuffle[2..3].join}").for(:email)
       }
     end
 
+    # Попытка обновить данные пользователя с неправильным старым паролем
     context 'when we change password with invalid old password' do
       it 'should return an error' do
         user = User.find_by_login('TestLogin')
@@ -56,6 +61,7 @@ RSpec.describe User, type: :model do
       end
     end
 
+    # Попытка обновить данные пользователя
     context 'when we update profile data' do
       it 'should change login w/o any errors' do
         user = User.find_by_login('TestLogin')
@@ -79,6 +85,7 @@ RSpec.describe User, type: :model do
       end
     end
 
+    # Проверка валидации логина
     context 'when login is valid' do
       it { should allow_value(Faker::Lorem.word).for(:login) }
     end

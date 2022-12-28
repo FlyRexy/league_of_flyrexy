@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates :email , presence: { message: 'не может быть пустым' }, uniqueness: {message: "уже существует"}
   validates :login , presence: { message: 'не может быть пустым' }, uniqueness: {message: "уже существует"}
   validates :password, confirmation: true, allow_blank: true, length: { minimum: 8, maximum: 70 }
+  validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i}
   validate :correct_old_password, on: :update, if: -> { password.present? and old_password_needs }
   validate :password_presence
   before_create :confirmation_token

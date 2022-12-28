@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'editing user data', type: :system do
+  # Смена пароля
   scenario 'change password' do
     user = User.create(login: 'TestSigningIn', email: 'user@mail.ru', password: 'testPassword21',
                        password_confirmation: 'testPassword21', email_confirmed: 'true')
@@ -26,6 +27,7 @@ RSpec.describe 'editing user data', type: :system do
 
     expect(page).to have_text 'Данные о пользователе были обновлены'
   end
+  # Смена пароля с неправильно введенным старым паролем
   scenario 'change password with incorrect old password' do
     user = User.create(login: 'TestSigningIn', email: 'user@mail.ru', password: 'testPassword21',
                        password_confirmation: 'testPassword21', email_confirmed: 'true')
@@ -51,6 +53,7 @@ RSpec.describe 'editing user data', type: :system do
 
     expect(page).to have_text 'Старый пароль был введен неправильно!🐨'
   end
+  # Смена логина
   scenario 'change login w/o updating password' do
     user = User.create(login: 'TestSigningIn', email: 'user@mail.ru', password: 'testPassword21',
                        password_confirmation: 'testPassword21', email_confirmed: 'true')
@@ -75,6 +78,7 @@ RSpec.describe 'editing user data', type: :system do
 
     expect(page).to have_text 'Данные о пользователе были обновлены'
   end
+  # Смена почты
   scenario 'change email w/o updating password' do
     user = User.create(login: 'TestSigningIn', email: 'user@mail.ru', password: 'testPassword21',
                        password_confirmation: 'testPassword21', email_confirmed: 'true')

@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'reset password', type: :system do
 
+  # Сброс пароля и получение уведомления
   scenario 'getting notice of resetting password' do
     visit new_session_path
 

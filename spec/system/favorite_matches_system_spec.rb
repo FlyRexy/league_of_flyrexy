@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'favorite page', type: :system do
+  # Добавления команды в избранное и отображение матчей только любимых команд
   scenario 'adding team to favorite' do
     user = User.create(login: 'TestSigningIn', email: 'user@mail.ru', password: 'testPassword21',
                        password_confirmation: 'testPassword21', email_confirmed: 'true')

@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe PasswordResetMailer, type: :mailer do
+  # Отправление писем на сброс пароля
   context 'when we send registration letter' do
     let!(:user_data) do
       { login: 'TestMailer', password: 'TestMailer12', password_confirmation: 'TestMailer12', email: 'user@mail.ru', email_confirmed: true}

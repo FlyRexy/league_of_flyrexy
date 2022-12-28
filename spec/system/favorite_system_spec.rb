@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'favorite page', type: :system do
+  # Добавление команды в избранное
   scenario 'adding team to favorite' do
     user = User.create(login: 'TestSigningIn', email: 'user@mail.ru', password: 'testPassword21',
                        password_confirmation: 'testPassword21', email_confirmed: 'true')
@@ -21,6 +22,7 @@ RSpec.describe 'favorite page', type: :system do
 
     expect(page).to have_text 'Команда Fly Esports была добавлена в избранное'
   end
+  # Удаление команды из избранного
   scenario 'deleting team from favorite' do
     user = User.create(login: 'TestSigningIn', email: 'user@mail.ru', password: 'testPassword21',
                        password_confirmation: 'testPassword21', email_confirmed: 'true')

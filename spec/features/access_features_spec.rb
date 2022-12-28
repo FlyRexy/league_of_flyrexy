@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'user trying to get he should not be', type: :feature do
+  # Попытка попасть на страницу входа, будучи авторизованным
   scenario 'user is trying to log in again' do
     user = User.create(login: 'TestSigningIn', email: 'user@mail.ru', password: 'testPassword21',
                        password_confirmation: 'testPassword21', email_confirmed: 'true')
@@ -18,6 +19,7 @@ RSpec.describe 'user trying to get he should not be', type: :feature do
 
     expect(page).to have_text 'Вы уже авторизованы'
   end
+  # Попытка попасть на страницу регистрации, будучи авторизованным
   scenario 'user is trying to sign up again' do
     user = User.create(login: 'TestSigningIn', email: 'user@mail.ru', password: 'testPassword21',
                        password_confirmation: 'testPassword21', email_confirmed: 'true')

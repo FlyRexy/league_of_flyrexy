@@ -2,6 +2,7 @@
 
 require 'rails_helper'
 
+# Попытка попасть пользователем на страницы, доступные только админу
 RSpec.describe 'user trying to get he should not be', type: :feature do
   scenario 'user getting to adding new teams' do
     user = User.create(login: 'TestSigningIn', email: 'user@mail.ru', password: 'testPassword21',

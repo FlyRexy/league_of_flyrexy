@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'signing user', type: :system do
+  # Вход пользователя
   scenario 'signing in' do
     user = User.create(login: 'TestSigningIn', email: 'user@mail.ru', password: 'testPassword21',
                        password_confirmation: 'testPassword21', email_confirmed: 'true')
@@ -17,6 +18,7 @@ RSpec.describe 'signing user', type: :system do
     expect(current_path).to eq root_path
   end
 
+  # Регистрация пользователя
   scenario 'signing up' do
     visit new_user_path
 
